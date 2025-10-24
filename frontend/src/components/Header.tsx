@@ -8,7 +8,7 @@ export function Header() {
         <div className="header-content">
           <div className="header-left">
             <h1 className="header-title">SecretChat</h1>
-            <span className="header-subtitle">Private messaging with FHE protection</span>
+            <span className="header-subtitle">Private messaging with Zama protection</span>
           </div>
           <ConnectButton />
         </div>
