@@ -3,15 +3,15 @@ import { HardhatRuntimeEnvironment } from "hardhat/types";
 
 const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const { deployer } = await hre.getNamedAccounts();
-  const { deploy } = hre.deployments;
+  const { deploy, log } = hre.deployments;
 
-  const deployedFHECounter = await deploy("FHECounter", {
+  const deployment = await deploy("SecretChat", {
     from: deployer,
     log: true,
   });
 
-  console.log(`FHECounter contract: `, deployedFHECounter.address);
+  log(`SecretChat contract: ${deployment.address}`);
 };
 export default func;
-func.id = "deploy_fheCounter"; // id required to prevent reexecution
-func.tags = ["FHECounter"];
+func.id = "deploy_secretChat";
+func.tags = ["SecretChat"];
